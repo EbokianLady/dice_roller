@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 function DiceRoller() {
-  const [diceCount, setDiceCount] = useState(0);
-  const [diceValue, setDiceValue] = useState(0);
+  const [diceCount, setDiceCount] = useState(2);
+  const [diceValue, setDiceValue] = useState(6);
   const [rollValue, setRollValue] = useState(0);
   const [rollSummary, setRollSummary] = useState('');
 
@@ -53,16 +53,24 @@ function DiceRoller() {
 
   return (
     <div>
-      <p>{diceCount} D {diceValue}</p>
-      <button onClick={() => rollDice()}>
-        ROLL
-      </button>
-      <p>{rollSummary} = {rollValue}</p>
-
-      <p>Explodes is {bool}</p>
-      <button onClick={() => setExplodes(!explodes)}>
-        Click me
-      </button>
+      <div className='dice-roller'>
+        <div
+          className='roll-btn'
+          onClick={() => rollDice()}>
+          ROLL
+        </div>
+        <div className='dice-selection'>
+          {diceCount}D{diceValue}
+        </div>
+        <button onClick={() => setExplodes(!explodes)}>
+          {bool}
+        </button>
+        <div className='dice-summary'>
+          <h3>{rollSummary}</h3>
+          <h4>=</h4>
+          <h2>{rollValue}</h2>
+        </div>
+      </div>
 
       {dropDownMenu}
     </div>
