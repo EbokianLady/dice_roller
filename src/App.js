@@ -1,11 +1,12 @@
 import React from 'react';
+import DiceRoller from './components/dice_roller';
 
 class App extends React.Component {
 
   render () {
     return (
       <div>
-        <h1>Dice Roller</h1>
+        <DiceRoller/>
       </div>
     )
   }
