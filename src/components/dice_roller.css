@@ -1,62 +1,62 @@
-.dice-roller {
+.diceRoller {
   background-color: #DDD;
+  border: 2px solid #888;
   border-radius: 6px;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   height: 100px;
   margin: 0;
-  padding: 20px 30px;
+  padding: 0px 30px;
 }
 
-.roll-btn {
-  background-color: red;
-  border: black 1px solid;
+.rollButton {
+  background-color: #F99;
+  border: 2px solid #B21;
   border-radius: 6px;
-  color: black;
+  color: #710;
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
   height: 40px;
   justify-content: center;
-  margin-right: 10px;
   padding: 0px 15px;
 }
 
-.dice-selection {
+.diceSelection {
   height: 60px;
-  margin-right: 10px;
+  margin: 0px 15px;
   width: 60px;
+  position: relative;
 }
 
-.dice-explodes {
+.diceExplodes {
   background-color: aqua;
   height: 20px;
-  margin-right: 10px;
   width: 20px;
 }
 
-.dice-summary {
+.diceSummary {
   background-color: #EEE;
   border-radius: 6px;
   height: 40px;
   justify-content: center;
-  padding: 0px 0px 0px 15px;
 }
 
-.dice-total {
+.diceTotal {
   align-items: center;
   background-color: #FFF;
-  border: black solid 1px;
+  border: 2px solid #888;
   border-radius: 6px;
-  color: maroon;
+  color: #710;
   display: flex;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   justify-content: center;
   min-height: 40px;
-  min-width: 40px;
+  min-width: 60px;
 }
 
-.dice-rolls {
+.diceRolls {
   align-items: center;
   display: flex;
   font-size: 12px;
@@ -64,7 +64,36 @@
   width: 80px;
 }
 
-.dice-icon {
+.diceIcon {
+  cursor: pointer;
   height: 60px;
   width: 60px;
+}
+
+
+/* dropdown */
+.dropdownMenu {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  background-color: #FFF;
+  top: 0px;
+  border: solid 1px #888;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.diceIconSmall {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.diceIconSmall:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './dice_roller.css';
+import DiceButton from './dice_button';
 import { diceImages } from './dice_images';
 
 function DiceRoller() {
@@ -10,7 +11,10 @@ function DiceRoller() {
   const [rollSummary, setRollSummary] = useState('');
 
   const [explodes, setExplodes] = useState(false);
-  const [dropDown, setDropDown] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  let bool = explodes ? 'on' : 'off';
+  let dropdownStyle = dropdown ? {} : {display: 'none'};
 
   const setDiceRoller = function(count, value, image) {
     setDiceCount(count);
@@ -35,46 +39,46 @@ function DiceRoller() {
     setRollValue(total);
   };
 
-  const dropDownMenu = (
-    <div>
-      <button
-        className='dice-option'
-        onClick={() => setDiceRoller(1, 6, '1d6')}>
-          <img className='dice-icon' src={diceImages['1d6']} />
-      </button>
-      <button
-        className='dice-option'
-        onClick={() => setDiceRoller(2, 6, '2d6')}>
-        <img className='dice-icon' src={diceImages['2d6']} />
-      </button>
+  const dropdownMenu = (
+    <div
+      className='dropdownMenu'
+      style={dropdownStyle}>
+        {DiceButton(setDiceRoller, 1, 4, '1d4')}
+        {DiceButton(setDiceRoller, 1, 6, '1d6')}
+        {DiceButton(setDiceRoller, 2, 6, '2d6')}
+        {DiceButton(setDiceRoller, 1, 8, '1d8')}
+        {DiceButton(setDiceRoller, 1, 10, '1d10')}
+        {DiceButton(setDiceRoller, 1, 100, '2d10')}
+        {DiceButton(setDiceRoller, 1, 12, '1d12')}
+        {DiceButton(setDiceRoller, 1, 20, '1d20')}
     </div>
   )
 
-  let bool = explodes ? 'on' : 'off';
 
   return (
-    <div>
-      <div className='dice-roller'>
-        <div
-          className='roll-btn'
-          onClick={() => rollDice()}>
-          ROLL
-        </div>
-        <div className='dice-selection'>
-          <img className='dice-icon' src={diceImages[diceImage]} />
-        </div>
-        <div
-          className='dice-explodes'
-          onClick={() => setExplodes(!explodes)}>
-          {bool}
-        </div>
-        <div className='dice-summary'>
-          <h3 className='dice-rolls'>{rollSummary}</h3>
-          <h2 className='dice-total'>{rollValue}</h2>
-        </div>
+    <div className='diceRoller'>
+      <div
+        className='rollButton'
+        onClick={() => rollDice()}>
+        ROLL
       </div>
 
-      {dropDownMenu}
+      <div className='diceSelection'
+        onClick={() => setDropdown(!dropdown)}>
+        <img className='diceIcon' src={diceImages[diceImage]} />
+        {dropdownMenu}
+      </div>
+
+      {/* <div
+        className='diceExplodes'
+        onClick={() => setExplodes(!explodes)}>
+        {bool}
+      </div> */}
+
+      <div className='diceSummary'>
+        {/* <h3 className='diceRolls'>{rollSummary}</h3> */}
+        <h2 className='diceTotal'>{rollValue}</h2>
+      </div>
     </div>
   );
 }
