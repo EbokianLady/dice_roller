@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './dice_roller.css';
 
 function DiceRoller() {
   const [diceCount, setDiceCount] = useState(2);
