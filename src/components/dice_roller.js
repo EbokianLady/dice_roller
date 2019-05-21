@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './dice_roller.css';
 import { diceImages } from './dice_images';
 
-
 function DiceRoller() {
   const [diceCount, setDiceCount] = useState(2);
   const [diceValue, setDiceValue] = useState(6);
@@ -12,11 +11,6 @@ function DiceRoller() {
 
   const [explodes, setExplodes] = useState(false);
   const [dropDown, setDropDown] = useState(false);
-
-  // const diceImages = {
-  //   '1d6': icon1d6,
-  //   '2d6': icon1d6,
-  // };
 
   const setDiceRoller = function(count, value, image) {
     setDiceCount(count);
