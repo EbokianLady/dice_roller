@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
 
 function DiceRoller() {
-  const [diceCount, setCount] = useState(0);
-  const [diceValue, setValue] = useState(0);
+  const [diceCount, setDiceCount] = useState(0);
+  const [diceValue, setDiceValue] = useState(0);
+  const [rollValue, setRollValue] = useState(0);
+  const [rollSummary, setRollSummary] = useState('');
+
   const [explodes, setExplodes] = useState(false);
   const [dropDown, setDropDown] = useState(false);
 
   const setDiceRoller = function(count, value) {
-    setCount(count);
-    setValue(value);
+    setDiceCount(count);
+    setDiceValue(value);
+  };
+
+  const rollDice = function() {
+    let str = '';
+    let total = 0;
+    let random;
+
+    for (let i = 0; i < diceCount; i++) {
+      random = Math.floor(Math.random() * (diceValue)) + 1;
+      str += ` + ${random}`;
+      total += random;
+    }
+
+    setRollSummary(str.slice(3));
+    setRollValue(total);
   };
 
   const dropDownMenu = (
@@ -36,6 +54,11 @@ function DiceRoller() {
   return (
     <div>
       <p>{diceCount} D {diceValue}</p>
+      <button onClick={() => rollDice()}>
+        ROLL
+      </button>
+      <p>{rollSummary} = {rollValue}</p>
+
       <p>Explodes is {bool}</p>
       <button onClick={() => setExplodes(!explodes)}>
         Click me
