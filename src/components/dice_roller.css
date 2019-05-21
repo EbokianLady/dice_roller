@@ -1,17 +1,69 @@
 .dice-roller {
-  display: flex;
-  width: 400px;
-  background-color: orange;
+  background-color: #DDD;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 100px;
+  margin: 0;
+  padding: 20px;
 }
 
 .roll-btn {
-
+  background-color: red;
+  border: black 1px solid;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  justify-content: center;
+  margin-right: 10px;
+  padding: 0px 15px;
 }
 
 .dice-selection {
+  height: 60px;
+  margin-right: 10px;
+  width: 60px;
+}
 
+.dice-explodes {
+  background-color: aqua;
+  height: 20px;
+  margin-right: 10px;
+  width: 20px;
 }
 
 .dice-summary {
+  background-color: #EEE;
+  border-radius: 6px;
+  height: 40px;
+  justify-content: center;
+  padding: 0px 0px 0px 15px;
+}
 
+.dice-total {
+  align-items: center;
+  background-color: #FFF;
+  border: black solid 1px;
+  border-radius: 6px;
+  color: maroon;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  min-height: 40px;
+  min-width: 40px;
+}
+
+.dice-rolls {
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  height: 20px;
+  width: 80px;
+}
+
+.dice-icon {
+  height: 60px;
+  width: 60px;
 }

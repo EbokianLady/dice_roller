@@ -30,10 +30,6 @@ footer, header, hgroup, menu, nav, section {
 display: block;
 }
 
-body {
-line-height: 1;
-}
-
 ol, ul {
 list-style: none;
 }
@@ -61,4 +57,17 @@ button {
   background-color: transparent;
   border: none;
   outline: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  margin-top: 50px;
+}
+
+div {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
 }
