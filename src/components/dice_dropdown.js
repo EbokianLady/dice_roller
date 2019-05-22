@@ -16,7 +16,7 @@ const DiceDropdown = function (setDiceRoller, setCustomDiceRoller) {
       {DiceButton(setDiceRoller, 1, 20, '1d20')}
       <button
         onClick={() => setCustomDiceRoller()}>
-        <img className='diceIconSmall' src={diceImages['custom']} />
+        <img className='diceIconSmall' src={diceImages['custom']} alt='' />
       </button>
     </div>
   )

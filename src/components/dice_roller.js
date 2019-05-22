@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import DiceForm from './dice_form';
 import DiceDropdown from './dice_dropdown';
 import { diceImages } from './dice_images';
+import explodesOn from '../images/explodes.png';
+import explodesOff from '../images/explodes-off.png';
 import './dice_roller.css';
 
 function DiceRoller() {
@@ -17,8 +19,6 @@ function DiceRoller() {
   const [dropdown, setDropdown] = useState(false);
   const [summary, setSummary] = useState(false);
   const [customForm, setCustomForm] = useState(false);
-
-  let bool = explodes ? 'on' : 'off';
 
   const setDiceRoller = function(count, value, image) {
     setDiceCount(count);
@@ -102,6 +102,10 @@ function DiceRoller() {
     <div></div>
   )
 
+  const explodesIcon = (
+    explodes ? explodesOn : explodesOff
+  )
+
   return (
     <div className='diceRoller'>
       <div className='controlPanel'>
@@ -121,17 +125,17 @@ function DiceRoller() {
       <div className='diceSelection'>
         <div
           onClick={() => setDropdown(true)}>
-          <img className='diceIcon' src={diceImages[diceImage]} />
+          <img className='diceIcon' src={diceImages[diceImage]} alt='' />
         </div>
         {dropdownMenu}
         {customFormMenu}
+        <div
+          className='diceExplodes'
+          onClick={() => setExplodes(!explodes)}>
+          <img className='explodesIcon' src={explodesIcon} alt='' />
+        </div>
       </div>
 
-      <div
-        className='diceExplodes'
-        onClick={() => setExplodes(!explodes)}>
-        {bool}
-      </div>
     </div>
   );
 }

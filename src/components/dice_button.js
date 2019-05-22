@@ -5,7 +5,7 @@ const DiceButton = function(setChoice, count, value, image) {
   return (
     <button
       onClick={() => setChoice(count, value, image)}>
-      <img className='diceIconSmall' src={diceImages[image]} />
+      <img className='diceIconSmall' src={diceImages[image]} alt='' />
     </button>
   )
 }
