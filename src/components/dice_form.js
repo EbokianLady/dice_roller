@@ -5,7 +5,9 @@ const DiceForm = function(setDropdown, count, value, setCount, setValue) {
   return (
     <div className='customForm'>
       <div onClick={() => setDropdown(true)}>
-        <img className='diceIconMed' src={diceImages['custom']} alt='' />
+        <div className='diceIconMed' >
+          {diceImages['custom']()}
+        </div>
       </div>
       <div className='inputFields'>
         <input
