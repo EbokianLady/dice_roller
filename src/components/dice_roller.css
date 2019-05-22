@@ -1,7 +1,7 @@
 .diceRoller {
-  background-color: #DDD;
+  /* background-color: #DDD;
   border: 2px solid #888;
-  border-radius: 6px;
+  border-radius: 6px; */
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
@@ -34,9 +34,10 @@
 }
 
 .customForm {
-  background-color: #DDD;
+  background-color: inherit;
   position: absolute;
   height: 130px;
+  left: -15px;
   width: 130px;
   display: flex;
   flex-direction: column;
@@ -130,7 +131,6 @@ input {
 
 .diceIcon {
   cursor: pointer;
-  /* padding: 0px 7.5px; */
   height: 100px;
   width: 100px;
 }
@@ -154,6 +154,7 @@ input {
   flex-direction: row;
   height: 130px;
   justify-content:flex-start;
+  left: -15px;
   padding: 4px;
   position: absolute;
   top: -15px;

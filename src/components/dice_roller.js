@@ -6,19 +6,20 @@ import explodesOn from '../images/explodes.png';
 import explodesOff from '../images/explodes-off.png';
 import './dice_roller.css';
 
-function DiceRoller() {
-  const [diceCount, setDiceCount] = useState(2);
-  const [diceValue, setDiceValue] = useState(6);
+function DiceRoller({ fillColor, lineColor }) {
   const [customCount, setCustomCount] = useState(2);
   const [customValue, setCustomValue] = useState(6);
-  const [diceImage, setDiceImage] = useState('1d8');
+  const [diceCount, setDiceCount] = useState(2);
+  const [diceValue, setDiceValue] = useState(6);
+  const [diceImage, setDiceImage] = useState('2d6');
   const [rollValue, setRollValue] = useState(0);
   const [rollSummary, setRollSummary] = useState('');
 
-  const [explodes, setExplodes] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
-  const [summary, setSummary] = useState(false);
   const [customForm, setCustomForm] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const [explodes, setExplodes] = useState(false);
+  const [summary, setSummary] = useState(false);
+
 
   const setDiceRoller = function(count, value, image) {
     setDiceCount(count);
@@ -33,7 +34,7 @@ function DiceRoller() {
   const setCustomDiceRoller = function() {
     setDiceCount(customCount);
     setDiceValue(customValue);
-    setDiceImage('custom');
+    setDiceImage('none');
     setRollValue(0);
     setRollSummary('');
     setCustomForm(true);
@@ -86,13 +87,13 @@ function DiceRoller() {
 
   const dropdownMenu = (
     dropdown ?
-    DiceDropdown(setDiceRoller, setCustomDiceRoller) :
+    DiceDropdown(setDiceRoller, setCustomDiceRoller, fillColor, lineColor) :
     <div></div>
   )
 
   const customFormMenu = (
     customForm ?
-    DiceForm(setDropdown, diceCount, diceValue, setCount, setValue) :
+    DiceForm(setDropdown, diceCount, diceValue, setCount, setValue, fillColor, lineColor) :
     <div></div>
   )
 
@@ -126,7 +127,7 @@ function DiceRoller() {
         <div
           onClick={() => setDropdown(true)}>
           <div className='diceIcon' >
-            {diceImages[diceImage]()}
+            {diceImages[diceImage](fillColor, lineColor)}
           </div>
         </div>
         {dropdownMenu}

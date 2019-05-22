@@ -6,7 +6,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <DiceRoller/>
+      <DiceRoller fillColor='#686' lineColor='#333' />
     )
   }
 }

@@ -1,4 +1,11 @@
+import React from 'react';
 import * as svg from './dice_svg_icons/dice_svg_icons';
+
+const none = function() {
+  return (
+    <div></div>
+  )
+}
 
 export const diceImages = {
   '1d4': svg.icon1d4,
@@ -10,4 +17,5 @@ export const diceImages = {
   '1d12': svg.icon1d12,
   '1d20': svg.icon1d20,
   'custom': svg.custom,
+  'none': none,
 };
