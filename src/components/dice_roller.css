@@ -33,6 +33,42 @@
   position: relative;
 }
 
+.customForm {
+  background-color: #EEE;
+  position: absolute;
+  height: 130px;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+.inputFields {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  background-color: white;
+  border: 1px solid #DDD;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: text;
+  font-size: 18px;
+  height: 40px;
+  text-align: center;
+  padding: 5px;
+  width: 40px;
+}
+
+input > p {
+  font-size: 18px;
+  margin: 0px;
+}
+
 .diceExplodes {
   background-color: aqua;
   height: 20px;
@@ -57,22 +93,28 @@
 
 .diceSummary {
   align-items: center;
-  background-color: white;
+  background-color: #FFF;
   border: 2px solid #888;
-  border-radius: 6px;
+  border-left: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+
   box-sizing: border-box;
   color: black;
   display: flex;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
   height: 50px;
-  justify-content: center;
+  justify-content: flex-start;
   left: 70px;
-  padding: 0px 10px;
+  overflow: auto;
+  overflow-y: hidden;
+  padding: 0px 15px;
   position: absolute;
   top: -2px;
-  width: fit-content;
-  z-index: 1;
+  white-space: nowrap;
+  width: 165px;
+  z-index: 2;
 }
 
 .diceRolls {
@@ -90,21 +132,29 @@
   width: 100px;
 }
 
+.diceIconMed {
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  margin: 4px;
+}
+
 /* dropdown */
 .dropdownMenu {
-  position: absolute;
+  align-items: center;
+  background-color: #FFF;
+  border: solid 1px #888;
+  border-radius: 6px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content:flex-start;
-  align-items: center;
-  width: 130px;
   height: 130px;
-  background-color: #FFF;
-  top: -15px;
-  border: solid 1px #888;
-  border-radius: 6px;
+  justify-content:flex-start;
   padding: 4px;
+  position: absolute;
+  top: -15px;
+  width: 130px;
+  z-index: 1;
 }
 
 .diceIconSmall {

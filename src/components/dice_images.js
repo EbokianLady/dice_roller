@@ -6,6 +6,7 @@ import icon1d10 from '../images/1d10.png';
 import icon2d10 from '../images/2d10.png';
 import icon1d12 from '../images/1d12.png';
 import icon1d20 from '../images/1d20.png';
+import custom from '../images/custom.png';
 
 export const diceImages = {
   '1d4': icon1d4,
@@ -16,4 +17,5 @@ export const diceImages = {
   '2d10': icon2d10,
   '1d12': icon1d12,
   '1d20': icon1d20,
+  'custom': custom,
 };

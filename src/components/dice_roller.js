@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import './dice_roller.css';
-import DiceButton from './dice_button';
+import DiceForm from './dice_form';
+import DiceDropdown from './dice_dropdown';
 import { diceImages } from './dice_images';
+import './dice_roller.css';
 
 function DiceRoller() {
   const [diceCount, setDiceCount] = useState(2);
   const [diceValue, setDiceValue] = useState(6);
+  const [customCount, setCustomCount] = useState(2);
+  const [customValue, setCustomValue] = useState(6);
   const [diceImage, setDiceImage] = useState('2d6');
   const [rollValue, setRollValue] = useState(0);
   const [rollSummary, setRollSummary] = useState('');
@@ -13,10 +16,9 @@ function DiceRoller() {
   const [explodes, setExplodes] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [summary, setSummary] = useState(false);
+  const [customForm, setCustomForm] = useState(false);
 
   let bool = explodes ? 'on' : 'off';
-  let dropdownStyle = dropdown ? {} : {display: 'none'};
-  let summaryStyle = summary ? {} : {display: 'none'};
 
   const setDiceRoller = function(count, value, image) {
     setDiceCount(count);
@@ -24,16 +26,37 @@ function DiceRoller() {
     setDiceImage(image);
     setRollValue(0);
     setRollSummary('');
+    setCustomForm(false);
+    setDropdown(false);
+  };
+
+  const setCustomDiceRoller = function() {
+    setDiceCount(customCount);
+    setDiceValue(customValue);
+    // setDiceImage('custom');
+    setRollValue(0);
+    setRollSummary('');
+    setCustomForm(true);
+    setDropdown(false);
   };
 
   const setSummaryConditional = function () {
     if (rollSummary !== '') setSummary(true);
   };
 
+  const setCount = function(count) {
+    setCustomCount(parseInt(count));
+    setDiceCount(parseInt(count));
+  };
+
+  const setValue = function (value) {
+    setCustomValue(parseInt(value));
+    setDiceValue(parseInt(value));
+  };
+
   const rollDice = function() {
     let str = '';
     let total = 0;
-    let random;
 
     for (let i = 0; i < diceCount; i++) {
       let result = rollSingleDie();
@@ -62,18 +85,21 @@ function DiceRoller() {
   };
 
   const dropdownMenu = (
-    <div
-      className='dropdownMenu'
-      style={dropdownStyle}>
-        {DiceButton(setDiceRoller, 1, 4, '1d4')}
-        {DiceButton(setDiceRoller, 1, 6, '1d6')}
-        {DiceButton(setDiceRoller, 2, 6, '2d6')}
-        {DiceButton(setDiceRoller, 1, 8, '1d8')}
-        {DiceButton(setDiceRoller, 1, 10, '1d10')}
-        {DiceButton(setDiceRoller, 1, 100, '2d10')}
-        {DiceButton(setDiceRoller, 1, 12, '1d12')}
-        {DiceButton(setDiceRoller, 1, 20, '1d20')}
-    </div>
+    dropdown ?
+    DiceDropdown(setDiceRoller, setCustomDiceRoller) :
+    <div></div>
+  )
+
+  const customFormMenu = (
+    customForm ?
+    DiceForm(setDropdown, diceCount, diceValue, setCount, setValue) :
+    <div></div>
+  )
+
+  const summaryDisplay = (
+    summary ?
+    <div className='diceSummary'>{rollSummary}</div> :
+    <div></div>
   )
 
   return (
@@ -88,18 +114,17 @@ function DiceRoller() {
           onMouseOver={() => setSummaryConditional()}
           onMouseOut={() => setSummary(false)}>
           {rollValue}
-          <div
-            className='diceSummary'
-            style={summaryStyle}>
-            {rollSummary}
-          </div>
+          {summaryDisplay}
         </div>
       </div>
 
-      <div className='diceSelection'
-        onClick={() => setDropdown(!dropdown)}>
-        <img className='diceIcon' src={diceImages[diceImage]} />
+      <div className='diceSelection'>
+        <div
+          onClick={() => setDropdown(true)}>
+          <img className='diceIcon' src={diceImages[diceImage]} />
+        </div>
         {dropdownMenu}
+        {customFormMenu}
       </div>
 
       <div
@@ -107,7 +132,6 @@ function DiceRoller() {
         onClick={() => setExplodes(!explodes)}>
         {bool}
       </div>
-
     </div>
   );
 }
