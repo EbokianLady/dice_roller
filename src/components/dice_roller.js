@@ -57,10 +57,15 @@ function DiceRoller() {
 
   return (
     <div className='diceRoller'>
-      <div
-        className='rollButton'
-        onClick={() => rollDice()}>
-        ROLL
+      <div className='controlPanel'>
+        <div
+          className='rollButton'
+          onClick={() => rollDice()}>
+          ROLL
+        </div>
+        <div className='diceTotal'>
+          {rollValue}
+        </div>
       </div>
 
       <div className='diceSelection'
@@ -75,10 +80,6 @@ function DiceRoller() {
         {bool}
       </div> */}
 
-      <div className='diceSummary'>
-        {/* <h3 className='diceRolls'>{rollSummary}</h3> */}
-        <h2 className='diceTotal'>{rollValue}</h2>
-      </div>
     </div>
   );
 }
