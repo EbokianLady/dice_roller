@@ -12,14 +12,22 @@ function DiceRoller() {
 
   const [explodes, setExplodes] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [summary, setSummary] = useState(false);
 
   let bool = explodes ? 'on' : 'off';
   let dropdownStyle = dropdown ? {} : {display: 'none'};
+  let summaryStyle = summary ? {} : {display: 'none'};
 
   const setDiceRoller = function(count, value, image) {
     setDiceCount(count);
     setDiceValue(value);
     setDiceImage(image);
+    setRollValue(0);
+    setRollSummary('');
+  };
+
+  const setSummaryConditional = function () {
+    if (rollSummary !== '') setSummary(true);
   };
 
   const rollDice = function() {
@@ -28,15 +36,29 @@ function DiceRoller() {
     let random;
 
     for (let i = 0; i < diceCount; i++) {
-      random = Math.floor(Math.random() * (diceValue)) + 1;
-      str += ` + ${random}`;
-      total += random;
+      let result = rollSingleDie();
+      str += ` + ${result[0]}`;
+      total += result[1];
     }
-
-    str += ' =';
 
     setRollSummary(str.slice(3));
     setRollValue(total);
+  };
+
+  const rollSingleDie = function() {
+    let total = Math.floor(Math.random() * (diceValue)) + 1;
+    let str;
+    let bonus;
+
+    if (explodes && total === diceValue) {
+      bonus = Math.floor(Math.random() * (diceValue)) + 1;
+      str = `(${total} + ${bonus})`;
+      total += bonus;
+    } else {
+      str = `${total}`;
+    }
+
+    return [str, total];
   };
 
   const dropdownMenu = (
@@ -54,7 +76,6 @@ function DiceRoller() {
     </div>
   )
 
-
   return (
     <div className='diceRoller'>
       <div className='controlPanel'>
@@ -63,8 +84,15 @@ function DiceRoller() {
           onClick={() => rollDice()}>
           ROLL
         </div>
-        <div className='diceTotal'>
+        <div className='diceTotal'
+          onMouseOver={() => setSummaryConditional()}
+          onMouseOut={() => setSummary(false)}>
           {rollValue}
+          <div
+            className='diceSummary'
+            style={summaryStyle}>
+            {rollSummary}
+          </div>
         </div>
       </div>
 
@@ -74,11 +102,11 @@ function DiceRoller() {
         {dropdownMenu}
       </div>
 
-      {/* <div
+      <div
         className='diceExplodes'
         onClick={() => setExplodes(!explodes)}>
         {bool}
-      </div> */}
+      </div>
 
     </div>
   );
