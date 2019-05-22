@@ -172,3 +172,7 @@ input {
   transform: scale(1.1);
   transition: 0.5s;
 }
+
+.icon1d10 {
+  color: rgb(43, 54, 14);
+}
