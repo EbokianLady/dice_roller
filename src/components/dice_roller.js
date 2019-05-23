@@ -6,7 +6,13 @@ import explodesOn from '../images/explodes.png';
 import explodesOff from '../images/explodes-off.png';
 import './dice_roller.css';
 
-function DiceRoller({ fillColor, lineColor }) {
+const defaultOptions = { fillColor: '#000', lineColor: '#777' };
+
+function DiceRoller({ options }) {
+  let palette = Object.assign(defaultOptions, options);
+  const fillColor = palette.fillColor;
+  const lineColor = palette.lineColor;
+
   const [customCount, setCustomCount] = useState(2);
   const [customValue, setCustomValue] = useState(6);
   const [diceCount, setDiceCount] = useState(2);
