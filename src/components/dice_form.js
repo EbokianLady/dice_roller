@@ -2,12 +2,11 @@ import React from 'react';
 import { diceImages } from './dice_images';
 
 const DiceForm = function(setDropdown, count, value, setCount, setValue, diceStyle) {
-  const { fillColor, lineColor } = diceStyle.fillColor;
   return (
     <div className='customForm'>
       <div onClick={() => setDropdown(true)}>
         <div className='diceIconMed' >
-          {diceImages['custom'](fillColor, lineColor)}
+          {diceImages['custom'](diceStyle)}
         </div>
       </div>
       <div className='inputFields'>

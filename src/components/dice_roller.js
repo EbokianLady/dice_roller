@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import DiceForm from './dice_form';
 import DiceDropdown from './dice_dropdown';
 import { diceImages } from './dice_images';
-import explodesOn from '../images/explodes.png';
-import explodesOff from '../images/explodes-off.png';
+import explodesOn from '../svg_icons/explode_many';
+import explodesOff from '../svg_icons/explode_off';
 import './dice_roller.css';
 
 const defaultOptions = {
@@ -14,7 +14,11 @@ const defaultOptions = {
   rollBtnText: '#000',
   totalBorder: '#000',
   totalFill: '#FFF',
-  totalText: '#000'
+  totalText: '#000',
+  explodeOffBorder: '#444',
+  explodeOffFill: '#999',
+  explodeOnBorder: '#F87',
+  explodeOnFill: '#959'
 };
 
 function DiceRoller({ options }) {
@@ -25,6 +29,16 @@ function DiceRoller({ options }) {
   const diceStyle = {
     fillColor: palette.fillColor,
     lineColor: palette.lineColor
+  };
+
+  const explodeOffStyle = {
+    fillColor: palette.explodeOffFill,
+    lineColor: palette.explodeOffBorder
+  };
+
+  const explodeOnStyle = {
+    fillColor: palette.explodeOnFill,
+    lineColor: palette.explodeOnBorder
   };
 
   const rollButtonStyle = {
@@ -139,7 +153,7 @@ function DiceRoller({ options }) {
   )
 
   const explodesIcon = (
-    explodes ? explodesOn : explodesOff
+    explodes ? explodesOn(explodeOnStyle) : explodesOff(explodeOffStyle)
   )
 
   return (
@@ -171,7 +185,7 @@ function DiceRoller({ options }) {
         <div
           className='diceExplodes'
           onClick={() => setExplodes(!explodes)}>
-          <img className='explodesIcon' src={explodesIcon} alt='' />
+          {explodesIcon}
         </div>
       </div>
     </div>

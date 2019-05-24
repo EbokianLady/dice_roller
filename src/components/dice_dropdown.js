@@ -2,7 +2,6 @@ import React from 'react';
 import { diceImages } from './dice_images';
 
 const DiceDropdown = function (setDiceRoller, setCustomDiceRoller, diceStyle) {
-  const { fillColor, lineColor } = diceStyle.fillColor;
   return (
     <div
       className='dropdownMenu'>
@@ -17,7 +16,7 @@ const DiceDropdown = function (setDiceRoller, setCustomDiceRoller, diceStyle) {
       <button
         onClick={() => setCustomDiceRoller()}>
         <div className='diceIconSmall' >
-          {diceImages['custom'](fillColor, lineColor)}
+          {diceImages['custom'](diceStyle)}
         </div>
       </button>
     </div>
@@ -25,12 +24,11 @@ const DiceDropdown = function (setDiceRoller, setCustomDiceRoller, diceStyle) {
 }
 
 const DiceButton = function (setChoice, count, value, image, diceStyle) {
-  const { fillColor, lineColor } = diceStyle.fillColor;
   return (
     <button
       onClick={() => setChoice(count, value, image)}>
       <div className='diceIconSmall' >
-        {diceImages[image](fillColor, lineColor)}
+        {diceImages[image](diceStyle)}
       </div>
     </button>
   )
