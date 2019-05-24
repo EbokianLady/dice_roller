@@ -1,7 +1,8 @@
 import React from 'react';
 import { diceImages } from './dice_images';
 
-const DiceForm = function(setDropdown, count, value, setCount, setValue, fillColor, lineColor) {
+const DiceForm = function(setDropdown, count, value, setCount, setValue, diceStyle) {
+  const { fillColor, lineColor } = diceStyle.fillColor;
   return (
     <div className='customForm'>
       <div onClick={() => setDropdown(true)}>

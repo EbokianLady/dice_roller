@@ -6,12 +6,29 @@ import explodesOn from '../images/explodes.png';
 import explodesOff from '../images/explodes-off.png';
 import './dice_roller.css';
 
-const defaultOptions = { fillColor: '#000', lineColor: '#777' };
+const defaultOptions = {
+  fillColor: '#FFF',
+  lineColor: '#000',
+  rollBtnBorder: '#000',
+  rollBtnFill: '#FFF',
+  rollBtnText: '#000'
+};
 
 function DiceRoller({ options }) {
   let palette = Object.assign(defaultOptions, options);
   const fillColor = palette.fillColor;
   const lineColor = palette.lineColor;
+
+  const diceStyle = {
+    fillColor: palette.fillColor,
+    lineColor: palette.lineColor
+  };
+
+  const rollButtonStyle = {
+    backgroundColor: palette.rollBtnFill,
+    border: `1.5px solid ${palette.rollBtnBorder}`,
+    color: palette.rollBtnText
+  };
 
   const [customCount, setCustomCount] = useState(2);
   const [customValue, setCustomValue] = useState(6);
@@ -93,7 +110,7 @@ function DiceRoller({ options }) {
 
   const dropdownMenu = (
     dropdown ?
-    DiceDropdown(setDiceRoller, setCustomDiceRoller, fillColor, lineColor) :
+    DiceDropdown(setDiceRoller, setCustomDiceRoller, diceStyle) :
     <div></div>
   )
 
@@ -116,7 +133,7 @@ function DiceRoller({ options }) {
   return (
     <div className='diceRoller'>
       <div className='controlPanel'>
-        <div
+        <div style={rollButtonStyle}
           className='rollButton'
           onClick={() => rollDice()}>
           ROLL
