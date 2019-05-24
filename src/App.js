@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <>
         <DiceRoller />
-        <DiceRoller options={custom2} />
+        {/* <DiceRoller options={custom2} /> */}
       </>
     )
   }

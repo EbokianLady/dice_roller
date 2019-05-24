@@ -11,7 +11,10 @@ const defaultOptions = {
   lineColor: '#000',
   rollBtnBorder: '#000',
   rollBtnFill: '#FFF',
-  rollBtnText: '#000'
+  rollBtnText: '#000',
+  totalBorder: '#000',
+  totalFill: '#FFF',
+  totalText: '#000'
 };
 
 function DiceRoller({ options }) {
@@ -28,6 +31,12 @@ function DiceRoller({ options }) {
     backgroundColor: palette.rollBtnFill,
     border: `1.5px solid ${palette.rollBtnBorder}`,
     color: palette.rollBtnText
+  };
+
+  const diceTotalStyle = {
+    backgroundColor: palette.totalFill,
+    border: `1.5px solid ${palette.totalBorder}`,
+    color: palette.totalText
   };
 
   const [customCount, setCustomCount] = useState(2);
@@ -116,13 +125,16 @@ function DiceRoller({ options }) {
 
   const customFormMenu = (
     customForm ?
-    DiceForm(setDropdown, diceCount, diceValue, setCount, setValue, fillColor, lineColor) :
+    DiceForm(setDropdown, diceCount, diceValue, setCount, setValue, diceStyle) :
     <div></div>
   )
 
   const summaryDisplay = (
     summary ?
-    <div className='diceSummary'>{rollSummary}</div> :
+    <div className='diceSummary'
+      style={{...diceTotalStyle, borderLeft: 'none'}}>
+      {rollSummary}
+    </div> :
     <div></div>
   )
 
@@ -139,6 +151,7 @@ function DiceRoller({ options }) {
           ROLL
         </div>
         <div className='diceTotal'
+          style={diceTotalStyle}
           onMouseOver={() => setSummaryConditional()}
           onMouseOut={() => setSummary(false)}>
           {rollValue}

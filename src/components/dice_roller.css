@@ -78,10 +78,8 @@ input {
 
 .diceTotal {
   align-items: center;
-  background-color: #EEE;
-  border: 2px solid #888;
   border-radius: 6px;
-  color: #710;
+  box-sizing: border-box;
   cursor: default;
   display: flex;
   font-size: 24px;
@@ -99,7 +97,6 @@ input {
   border-left: none;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-
   box-sizing: border-box;
   color: black;
   display: flex;
@@ -112,7 +109,6 @@ input {
   overflow-y: hidden;
   padding: 0px 15px;
   position: absolute;
-  top: -2px;
   white-space: nowrap;
   width: 145px;
   z-index: 5;
