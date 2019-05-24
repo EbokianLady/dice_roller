@@ -1,57 +1,48 @@
 import React, { useState } from 'react';
-import DiceForm from './dice_form';
-import DiceDropdown from './dice_dropdown';
-import { diceImages } from './dice_images';
+import DiceForm from './custom_form/custom_form';
+import DiceDropdown from './dropdown/dropdown';
+import { diceImages } from './dice_icons';
 import explodesOn from '../svg_icons/explode_many';
 import explodesOff from '../svg_icons/explode_off';
 import './dice_roller.css';
 
 const defaultOptions = {
-  fillColor: '#FFF',
-  lineColor: '#000',
-  rollBtnBorder: '#000',
-  rollBtnFill: '#FFF',
-  rollBtnText: '#000',
-  totalBorder: '#000',
-  totalFill: '#FFF',
-  totalText: '#000',
-  explodeOffBorder: '#444',
-  explodeOffFill: '#999',
-  explodeOnBorder: '#F87',
-  explodeOnFill: '#959'
+  backPanel: {
+    border: '1.5px solid #000',
+    backgroundColor: '#FFF',
+    color: '#000',
+  },
+  dropdownPanel: {
+    border: '1.5px solid #000',
+    backgroundColor: '#FFF',
+    color: '#000',
+  },
+  dice: {
+    fillColor: '#FFF',
+    lineColor: '#000',
+  },
+  explodeOff: {
+    lineColor: '#000',
+    fillColor: '#FFF',
+  },
+  explodeOn: {
+    lineColor: '#000',
+    fillColor: '#FFF'
+  },
+  textFields: {
+    border: '1.5px solid #000',
+    backgroundColor: '#FFF',
+    color: '#000',
+  },
+  rollBtn: {
+    border: '1.5px solid #000',
+    backgroundColor: '#FFF',
+    color: '#000',
+  },
 };
 
 function DiceRoller({ options }) {
   let palette = Object.assign(defaultOptions, options);
-  const fillColor = palette.fillColor;
-  const lineColor = palette.lineColor;
-
-  const diceStyle = {
-    fillColor: palette.fillColor,
-    lineColor: palette.lineColor
-  };
-
-  const explodeOffStyle = {
-    fillColor: palette.explodeOffFill,
-    lineColor: palette.explodeOffBorder
-  };
-
-  const explodeOnStyle = {
-    fillColor: palette.explodeOnFill,
-    lineColor: palette.explodeOnBorder
-  };
-
-  const rollButtonStyle = {
-    backgroundColor: palette.rollBtnFill,
-    border: `1.5px solid ${palette.rollBtnBorder}`,
-    color: palette.rollBtnText
-  };
-
-  const diceTotalStyle = {
-    backgroundColor: palette.totalFill,
-    border: `1.5px solid ${palette.totalBorder}`,
-    color: palette.totalText
-  };
 
   const [customCount, setCustomCount] = useState(2);
   const [customValue, setCustomValue] = useState(6);
@@ -133,39 +124,41 @@ function DiceRoller({ options }) {
 
   const dropdownMenu = (
     dropdown ?
-    DiceDropdown(setDiceRoller, setCustomDiceRoller, diceStyle) :
+    DiceDropdown(setDiceRoller, setCustomDiceRoller, palette) :
     <div></div>
   )
 
   const customFormMenu = (
     customForm ?
-    DiceForm(setDropdown, diceCount, diceValue, setCount, setValue, diceStyle) :
+    DiceForm(setDropdown, diceCount, diceValue, setCount, setValue, palette) :
     <div></div>
   )
 
   const summaryDisplay = (
     summary ?
     <div className='diceSummary'
-      style={{...diceTotalStyle, borderLeft: 'none'}}>
+      style={{...palette.textFields, borderLeft: 'none'}}>
       {rollSummary}
     </div> :
     <div></div>
   )
 
   const explodesIcon = (
-    explodes ? explodesOn(explodeOnStyle) : explodesOff(explodeOffStyle)
+    explodes ? explodesOn(palette.explodeOn) : explodesOff(palette.explodeOff)
   )
 
   return (
-    <div className='diceRoller'>
-      <div className='controlPanel'>
-        <div style={rollButtonStyle}
+    <div
+      className='diceRoller'
+      style={palette.backPanel}>
+      <div className='leftPanel'>
+        <div style={palette.rollBtn}
           className='rollButton'
           onClick={() => rollDice()}>
           ROLL
         </div>
         <div className='diceTotal'
-          style={diceTotalStyle}
+          style={palette.textFields}
           onMouseOver={() => setSummaryConditional()}
           onMouseOut={() => setSummary(false)}>
           {rollValue}
@@ -173,11 +166,11 @@ function DiceRoller({ options }) {
         </div>
       </div>
 
-      <div className='diceSelection'>
+      <div className='rightPanel'>
         <div
           onClick={() => setDropdown(true)}>
           <div className='diceIcon' >
-            {diceImages[diceImage](fillColor, lineColor)}
+            {diceImages[diceImage](palette.dice)}
           </div>
         </div>
         {dropdownMenu}

@@ -1,0 +1,27 @@
+.dropdownMenu {
+  align-items: center;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 130px;
+  justify-content:flex-start;
+  left: -15px;
+  padding: 4px;
+  position: absolute;
+  top: -15px;
+  width: 130px;
+  z-index: 3;
+}
+
+.diceIconSmall {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  margin: 4px;
+}
+
+.diceIconSmall:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
