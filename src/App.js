@@ -6,7 +6,7 @@ class App extends React.Component {
   render () {
     return (
       <>
-        <DiceRoller option='earth' />
+        <DiceRoller option='blueSteel' />
         {/* <DiceRoller /> */}
       </>
     )
