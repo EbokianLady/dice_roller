@@ -1,12 +1,12 @@
 const jewel = {
   backPanel: {
-    border: '1.5px solid #504122',
+    border: '1.5px solid #0C316D',
     backgroundColor: '#f3eee9',
     color: '#000',
   },
   dropdownPanel: {
-    border: '1.5px solid #e8d8b9',
-    backgroundColor: '#edddc2',
+    border: 'none',
+    backgroundColor: '#FFF',
     color: '#000',
   },
   dice: {
@@ -15,55 +15,55 @@ const jewel = {
       lineColor: '#000',
     },
     1: {
-      fillColor: '#BF301D',
-      lineColor: '#5E0000',
+      fillColor: '#FF6851',
+      lineColor: '#772848',
     },
     2: {
-      fillColor: '#68BD45',
-      lineColor: '#003E00',
+      fillColor: '#8FB83D',
+      lineColor: '#0A4437',
     },
     3: {
-      fillColor: '#4E7DFF',
-      lineColor: '#000066',
+      fillColor: '#30B1A0',
+      lineColor: '#0C316D',
     },
     4: {
-      fillColor: '#8652DF',
-      lineColor: '#330066',
+      fillColor: '#D0629B',
+      lineColor: '#4F0980',
     },
     5: {
-      fillColor: '#4E7DFF',
-      lineColor: '#000066',
+      fillColor: '#30B1A0',
+      lineColor: '#0C316D',
     },
     6: {
-      fillColor: '#8652DF',
-      lineColor: '#330066',
+      fillColor: '#D0629B',
+      lineColor: '#4F0980',
     },
     7: {
-      fillColor: '#68BD45',
-      lineColor: '#003E00',
+      fillColor: '#8FB83D',
+      lineColor: '#0A4437',
     },
     8: {
-      fillColor: '#BF301D',
-      lineColor: '#5E0000',
+      fillColor: '#FF6851',
+      lineColor: '#772848',
     },
   },
   explodeOff: {
-    lineColor: '#000',
-    fillColor: '#FFF',
+    lineColor: '#C6712E',
+    fillColor: '#FFF06F',
   },
   explodeOn: {
-    lineColor: '#FF9933',
-    fillColor: '#FFFF66'
+    lineColor: '#C6712E',
+    fillColor: '#FFF06F'
   },
   textFields: {
-    border: '1.5px solid #e8d8b9',
+    border: '1.5px solid #0C316D',
     backgroundColor: '#FFF',
     color: '#000',
   },
   rollBtn: {
-    border: '1.5px solid #e8d8b9',
-    backgroundColor: '#FFF',
-    color: '#000',
+    border: '1.5px solid #0C316D',
+    backgroundColor: '#0C316D',
+    color: '#FFF06F',
   },
 };
 
