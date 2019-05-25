@@ -1,5 +1,5 @@
 import React from 'react';
-import { diceImages } from '../dice_icons';
+import diceIcons from '../dice_icons';
 import './custom_form.css';
 
 const DiceForm = function(setDropdown, count, value, setCount, setValue, palette) {
@@ -7,12 +7,12 @@ const DiceForm = function(setDropdown, count, value, setCount, setValue, palette
     <div className='customForm'>
       <div onClick={() => setDropdown(true)}>
         <div className='diceIconMed' >
-          {diceImages['custom'](palette.dice)}
+          {diceIcons(palette.dice, 'custom')}
         </div>
       </div>
       <div
         className='inputFields'
-        style={{color: palette.dice.lineColor}}>
+        style={{color: palette.dice[0].lineColor}}>
         <input style={palette.textFields}
           value={count}
           onChange={e => { setCount(e.target.value) }}>

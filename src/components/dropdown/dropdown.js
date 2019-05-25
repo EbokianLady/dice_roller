@@ -1,5 +1,5 @@
 import React from 'react';
-import { diceImages } from '../dice_icons';
+import diceIcons from '../dice_icons';
 import './dropdown.css';
 
 const DiceDropdown = function (setDiceRoller, setCustomDiceRoller, { dice, dropdownPanel }) {
@@ -18,7 +18,7 @@ const DiceDropdown = function (setDiceRoller, setCustomDiceRoller, { dice, dropd
       <button
         onClick={() => setCustomDiceRoller()}>
         <div className='diceIconSmall' >
-          {diceImages['custom'](dice)}
+          {diceIcons(dice, 'custom')}
         </div>
       </button>
     </div>
@@ -30,7 +30,7 @@ const DiceButton = function (setChoice, count, value, image, diceStyle) {
     <button
       onClick={() => setChoice(count, value, image)}>
       <div className='diceIconSmall' >
-        {diceImages[image](diceStyle)}
+        {diceIcons(diceStyle, image)}
       </div>
     </button>
   )

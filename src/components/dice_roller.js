@@ -1,48 +1,14 @@
 import React, { useState } from 'react';
 import DiceForm from './custom_form/custom_form';
 import DiceDropdown from './dropdown/dropdown';
-import { diceImages } from './dice_icons';
+import diceIcons from './dice_icons';
 import explodesOn from '../svg_icons/explode_many';
 import explodesOff from '../svg_icons/explode_off';
 import './dice_roller.css';
+import defaultPalette from '../color_palettes/color_palettes';
 
-const defaultOptions = {
-  backPanel: {
-    border: '1.5px solid #000',
-    backgroundColor: '#FFF',
-    color: '#000',
-  },
-  dropdownPanel: {
-    border: '1.5px solid #000',
-    backgroundColor: '#FFF',
-    color: '#000',
-  },
-  dice: {
-    fillColor: '#FFF',
-    lineColor: '#000',
-  },
-  explodeOff: {
-    lineColor: '#000',
-    fillColor: '#FFF',
-  },
-  explodeOn: {
-    lineColor: '#000',
-    fillColor: '#FFF'
-  },
-  textFields: {
-    border: '1.5px solid #000',
-    backgroundColor: '#FFF',
-    color: '#000',
-  },
-  rollBtn: {
-    border: '1.5px solid #000',
-    backgroundColor: '#FFF',
-    color: '#000',
-  },
-};
-
-function DiceRoller({ options }) {
-  let palette = Object.assign(defaultOptions, options);
+function DiceRoller({ option = 'classic' }) {
+  let palette = defaultPalette[option];
 
   const [customCount, setCustomCount] = useState(2);
   const [customValue, setCustomValue] = useState(6);
@@ -170,7 +136,7 @@ function DiceRoller({ options }) {
         <div
           onClick={() => setDropdown(true)}>
           <div className='diceIcon' >
-            {diceImages[diceImage](palette.dice)}
+            {diceIcons(palette.dice, diceImage)}
           </div>
         </div>
         {dropdownMenu}

@@ -15,15 +15,22 @@ const none = function() {
   )
 }
 
-export const diceImages = {
-  '1d4': dice1d4,
-  '1d6': dice1d6,
-  '2d6': dice2d6,
-  '1d8': dice1d8,
-  '1d10': dice1d10,
-  '2d10': dice2d10,
-  '1d12': dice1d12,
-  '1d20': dice1d20,
-  'custom': diceCustom,
-  'none': none,
+const diceImages = function(diceStyle, key) {
+  const dice = {
+    '1d4': dice1d4(diceStyle[1]),
+    '1d6': dice1d6(diceStyle[2]),
+    '2d6': dice2d6(diceStyle[3]),
+    '1d8': dice1d8(diceStyle[4]),
+    '1d10': dice1d10(diceStyle[5]),
+    '2d10': dice2d10(diceStyle[6]),
+    '1d12': dice1d12(diceStyle[7]),
+    '1d20': dice1d20(diceStyle[8]),
+    'custom': diceCustom(diceStyle[0]),
+    'none': none,
+  }
+  return (
+    dice[key]
+  )
 };
+
+export default diceImages;
