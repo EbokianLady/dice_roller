@@ -72,3 +72,41 @@ div {
   box-sizing: border-box;
   display: flex;
 }
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sampleFrame {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+}
+
+.sample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+h1 {
+  font-family: 'Candal', sans-serif;
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-family: 'Candal', sans-serif;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+  margin-left: 2px;
+}

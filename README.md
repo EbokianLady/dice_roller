@@ -12,9 +12,7 @@ The project is a simple dice roller, intended for use as a component to be used 
 2. run `npm start`
 
 Create React App will automatically open up a window for you to start rolling.
-
-Check out customization options by going into App.js and passing in the palette option of your choice.
-Currently there are 4 active styles.
+Currently there are 4 active styles on display, easily passed into the component via an option prop.
 1. classic
 2. jewel
 3. earth
