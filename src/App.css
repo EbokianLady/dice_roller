@@ -64,7 +64,7 @@ body {
   display: flex;
   justify-content: center;
   line-height: 1;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 div {
@@ -95,8 +95,8 @@ div {
 
 h1 {
   font-family: 'Candal', sans-serif;
-  font-size: 36px;
-  margin-bottom: 5px;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -106,7 +106,7 @@ h2 {
 }
 
 .logo {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   margin-left: 2px;
 }

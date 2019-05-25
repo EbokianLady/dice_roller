@@ -1,69 +1,69 @@
 const blueSteel = {
   backPanel: {
-    border: '1.5px solid #696969',
-    backgroundColor: '#999',
-    color: '#021b33',
+    border: '1.5px solid #80BEF1',
+    backgroundColor: '#555',
+    color: '#80BEF1',
   },
   dropdownPanel: {
-    border: '1.5px solid #696969',
-    backgroundColor: '#C3C3C4',
-    color: '#021b33',
+    border: '1.5px solid #80BEF1',
+    backgroundColor: '#555',
+    color: '#80BEF1',
   },
   dice: {
     0: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
     1: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
     2: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
     3: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
     4: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
     5: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
     6: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
     7: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
     8: {
-      fillColor: '#586f8c',
-      lineColor: '#021b33',
+      fillColor: '#333',
+      lineColor: '#80BEF1',
     },
   },
   explodeOff: {
-    lineColor: '#696969',
-    fillColor: '#dedede',
+    lineColor: '#333',
+    fillColor: '#80BEF1',
   },
   explodeOn: {
-    lineColor: '#696969',
-    fillColor: '#dedede'
+    lineColor: '#333',
+    fillColor: '#80BEF1'
   },
   textFields: {
-    border: '1.5px solid #696969',
-    backgroundColor: '#dedede',
-    color: '#021b33',
+    border: '1.5px solid #80BEF1',
+    backgroundColor: '#80BEF1',
+    color: '#333',
   },
   rollBtn: {
-    border: '1.5px solid #696969',
-    backgroundColor: '#021b33',
-    color: '#7d95a9',
+    border: '1.5px solid #80BEF1',
+    backgroundColor: '#80BEF1',
+    color: '#333',
   },
 };
 
