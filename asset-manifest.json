@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/dice_roller/static/css/main.5c70bf74.chunk.css",
+    "main.js": "/dice_roller/static/js/main.5e50869d.chunk.js",
+    "main.js.map": "/dice_roller/static/js/main.5e50869d.chunk.js.map",
+    "runtime~main.js": "/dice_roller/static/js/runtime~main.80c3e5bc.js",
+    "runtime~main.js.map": "/dice_roller/static/js/runtime~main.80c3e5bc.js.map",
+    "static/js/2.b5a8bbb3.chunk.js": "/dice_roller/static/js/2.b5a8bbb3.chunk.js",
+    "static/js/2.b5a8bbb3.chunk.js.map": "/dice_roller/static/js/2.b5a8bbb3.chunk.js.map",
+    "index.html": "/dice_roller/index.html",
+    "precache-manifest.ea12996b62fa3f8a91329bb119f4cfdb.js": "/dice_roller/precache-manifest.ea12996b62fa3f8a91329bb119f4cfdb.js",
+    "service-worker.js": "/dice_roller/service-worker.js",
+    "static/css/main.5c70bf74.chunk.css.map": "/dice_roller/static/css/main.5c70bf74.chunk.css.map",
+    "static/media/logo.png": "/dice_roller/static/media/logo.1bac40b4.png"
+  }
+}
