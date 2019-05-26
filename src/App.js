@@ -23,6 +23,10 @@ class App extends React.Component {
             <DiceRoller key={4} option='jewel' />
           </div>
           <div className='sample'>
+            <h2>Galaxy</h2>
+            <DiceRoller key={6} option='galaxy' />
+          </div>
+          <div className='sample'>
             <h2>Inverse</h2>
             <DiceRoller key={5} option='inverse' />
           </div>
