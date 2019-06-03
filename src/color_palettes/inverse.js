@@ -7,6 +7,23 @@ const inverse = {
   dropdownPanel: {
     border: '1.5px solid #CC0000',
     backgroundColor: '#000',
+  },
+  explodeOff: {
+    lineColor: '#CC0000',
+    fillColor: '#000',
+  },
+  explodeOn: {
+    lineColor: '#CC0000',
+    fillColor: '#000'
+  },
+  textFields: {
+    border: '1.5px solid #CC0000',
+    backgroundColor: '#000',
+    color: '#CC0000',
+  },
+  rollBtn: {
+    border: '1.5px solid #CC0000',
+    backgroundColor: '#000',
     color: '#CC0000',
   },
   dice: {
@@ -46,24 +63,6 @@ const inverse = {
       fillColor: '#000',
       lineColor: '#CC0000',
     },
-  },
-  explodeOff: {
-    lineColor: '#CC0000',
-    fillColor: '#000',
-  },
-  explodeOn: {
-    lineColor: '#CC0000',
-    fillColor: '#000'
-  },
-  textFields: {
-    border: '1.5px solid #CC0000',
-    backgroundColor: '#000',
-    color: '#CC0000',
-  },
-  rollBtn: {
-    border: '1.5px solid #CC0000',
-    backgroundColor: '#000',
-    color: '#CC0000',
   },
 };
 

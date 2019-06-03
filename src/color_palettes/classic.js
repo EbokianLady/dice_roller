@@ -7,6 +7,23 @@ const classic = {
   dropdownPanel: {
     border: '1.5px solid #000',
     backgroundColor: '#FFF',
+  },
+  explodeOff: {
+    lineColor: '#000',
+    fillColor: '#FFF',
+  },
+  explodeOn: {
+    lineColor: '#000',
+    fillColor: '#FFF'
+  },
+  textFields: {
+    border: '1.5px solid #000',
+    backgroundColor: '#FFF',
+    color: '#000',
+  },
+  rollBtn: {
+    border: '1.5px solid #000',
+    backgroundColor: '#FFF',
     color: '#000',
   },
   dice: {
@@ -46,24 +63,6 @@ const classic = {
       fillColor: '#FFF',
       lineColor: '#000',
     },
-  },
-  explodeOff: {
-    lineColor: '#000',
-    fillColor: '#FFF',
-  },
-  explodeOn: {
-    lineColor: '#000',
-    fillColor: '#FFF'
-  },
-  textFields: {
-    border: '1.5px solid #000',
-    backgroundColor: '#FFF',
-    color: '#000',
-  },
-  rollBtn: {
-    border: '1.5px solid #000',
-    backgroundColor: '#FFF',
-    color: '#000',
   },
 };
 

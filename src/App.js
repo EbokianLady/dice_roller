@@ -20,23 +20,23 @@ class App extends React.Component {
           </div>
           <div className='sample'>
             <h2>Jewel</h2>
-            <DiceRoller key={4} option='jewel' />
-          </div>
-          <div className='sample'>
-            <h2>Galaxy</h2>
-            <DiceRoller key={6} option='galaxy' />
+            <DiceRoller key={2} option='jewel' preview='1d10'/>
           </div>
           <div className='sample'>
             <h2>Inverse</h2>
-            <DiceRoller key={5} option='inverse' />
+            <DiceRoller key={3} option='inverse' preview='1d4' />
+          </div>
+          <div className='sample'>
+            <h2>Galaxy</h2>
+            <DiceRoller key={4} option='galaxy' preview='2d10' />
           </div>
           <div className='sample'>
             <h2>Blue Steel</h2>
-            <DiceRoller key={2} option='blueSteel' />
+            <DiceRoller key={5} option='blueSteel' preview='1d8'/>
           </div>
           <div className='sample'>
             <h2>Earth</h2>
-            <DiceRoller key={3} option='earth' />
+            <DiceRoller key={6} option='earth' preview='1d20' />
           </div>
         </div>
       </div>

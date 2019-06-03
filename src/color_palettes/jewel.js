@@ -7,7 +7,24 @@ const jewel = {
   dropdownPanel: {
     border: 'none',
     backgroundColor: '#FFF',
+  },
+  explodeOff: {
+    lineColor: '#C6712E',
+    fillColor: '#FFF06F',
+  },
+  explodeOn: {
+    lineColor: '#C6712E',
+    fillColor: '#FFF06F'
+  },
+  textFields: {
+    border: '1.5px solid #0C316D',
+    backgroundColor: '#FFF',
     color: '#000',
+  },
+  rollBtn: {
+    border: '1.5px solid #0C316D',
+    backgroundColor: '#0C316D',
+    color: '#FFF06F',
   },
   dice: {
     0: {
@@ -46,24 +63,6 @@ const jewel = {
       fillColor: '#FF6851',
       lineColor: '#772848',
     },
-  },
-  explodeOff: {
-    lineColor: '#C6712E',
-    fillColor: '#FFF06F',
-  },
-  explodeOn: {
-    lineColor: '#C6712E',
-    fillColor: '#FFF06F'
-  },
-  textFields: {
-    border: '1.5px solid #0C316D',
-    backgroundColor: '#FFF',
-    color: '#000',
-  },
-  rollBtn: {
-    border: '1.5px solid #0C316D',
-    backgroundColor: '#0C316D',
-    color: '#FFF06F',
   },
 };
 

@@ -5,9 +5,26 @@ const earth = {
     color: '#172e1b',
   },
   dropdownPanel: {
+    border: 'none',
+    backgroundColor: '#f1e9de',
+  },
+  explodeOff: {
+    lineColor: '#a69e93',
+    fillColor: '#f1e9de',
+  },
+  explodeOn: {
+    lineColor: '#a69e93',
+    fillColor: '#f1e9de'
+  },
+  textFields: {
     border: '1.5px solid #a69e93',
-    backgroundColor: '#d8cdbc',
+    backgroundColor: '#f1e9de',
     color: '#172e1b',
+  },
+  rollBtn: {
+    border: '1.5px solid #a69e93',
+    backgroundColor: '#172e1b',
+    color: '#9eab60',
   },
   dice: {
     0: {
@@ -46,24 +63,6 @@ const earth = {
       fillColor: '#88944c',
       lineColor: '#172e1b',
     },
-  },
-  explodeOff: {
-    lineColor: '#a69e93',
-    fillColor: '#f1e9de',
-  },
-  explodeOn: {
-    lineColor: '#a69e93',
-    fillColor: '#f1e9de'
-  },
-  textFields: {
-    border: '1.5px solid #a69e93',
-    backgroundColor: '#f1e9de',
-    color: '#172e1b',
-  },
-  rollBtn: {
-    border: '1.5px solid #a69e93',
-    backgroundColor: '#172e1b',
-    color: '#9eab60',
   },
 };
 

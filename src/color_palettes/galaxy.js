@@ -7,7 +7,24 @@ const galaxy = {
   dropdownPanel: {
     border: '1.5px solid #7ABFDC',
     backgroundColor: '#120F30',
-    color: '#000',
+  },
+  explodeOff: {
+    lineColor: '#7ABFDC',
+    fillColor: '#1B2455',
+  },
+  explodeOn: {
+    lineColor: '#FA8BA6',
+    fillColor: '#1B2455'
+  },
+  textFields: {
+    border: '1.5px solid #F287D3',
+    backgroundColor: '#1B2455',
+    color: '#F287D3',
+  },
+  rollBtn: {
+    border: '1.5px solid #FA8BA6',
+    backgroundColor: '#1B2455',
+    color: '#FA8BA6',
   },
   dice: {
     0: {
@@ -46,24 +63,6 @@ const galaxy = {
       fillColor: '#410A43',
       lineColor: '#FA8BA6',
     },
-  },
-  explodeOff: {
-    lineColor: '#7ABFDC',
-    fillColor: '#1B2455',
-  },
-  explodeOn: {
-    lineColor: '#FA8BA6',
-    fillColor: '#1B2455'
-  },
-  textFields: {
-    border: '1.5px solid #F287D3',
-    backgroundColor: '#1B2455',
-    color: '#F287D3',
-  },
-  rollBtn: {
-    border: '1.5px solid #FA8BA6',
-    backgroundColor: '#1B2455',
-    color: '#FA8BA6',
   },
 };
 

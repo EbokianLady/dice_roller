@@ -7,14 +7,14 @@ import explodesOff from '../svg_icons/explode_off';
 import './dice_roller.css';
 import defaultPalette from '../color_palettes/color_palettes';
 
-function DiceRoller({ option = 'classic' }) {
+function DiceRoller({ option = 'classic', preview = '1d6' }) {
   let palette = defaultPalette[option];
 
   const [customCount, setCustomCount] = useState(2);
   const [customValue, setCustomValue] = useState(6);
   const [diceCount, setDiceCount] = useState(2);
   const [diceValue, setDiceValue] = useState(6);
-  const [diceImage, setDiceImage] = useState('2d6');
+  const [diceImage, setDiceImage] = useState(preview);
   const [rollValue, setRollValue] = useState(0);
   const [rollSummary, setRollSummary] = useState('');
 
