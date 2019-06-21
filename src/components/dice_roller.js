@@ -9,11 +9,12 @@ import defaultPalette from '../color_palettes/color_palettes';
 
 function DiceRoller({ option = 'classic', preview = '1d6' }) {
   let palette = defaultPalette[option];
+  let [count, value] = preview.split('d').map(el => parseInt(el));
 
-  const [customCount, setCustomCount] = useState(2);
-  const [customValue, setCustomValue] = useState(6);
-  const [diceCount, setDiceCount] = useState(2);
-  const [diceValue, setDiceValue] = useState(6);
+  const [customCount, setCustomCount] = useState(count);
+  const [customValue, setCustomValue] = useState(value);
+  const [diceCount, setDiceCount] = useState(count);
+  const [diceValue, setDiceValue] = useState(value);
   const [diceImage, setDiceImage] = useState(preview);
   const [rollValue, setRollValue] = useState(0);
   const [rollSummary, setRollSummary] = useState('');
