@@ -4,6 +4,7 @@ import earth from './earth';
 import galaxy from './galaxy';
 import inverse from './inverse';
 import jewel from './jewel';
+import wood from './wood';
 
 const palette = {
   classic: classic,
@@ -12,6 +13,7 @@ const palette = {
   galaxy: galaxy,
   inverse: inverse,
   jewel: jewel,
+  wood: wood
 };
 
 export default palette;

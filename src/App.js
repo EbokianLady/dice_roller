@@ -38,6 +38,10 @@ class App extends React.Component {
             <h2>Earth</h2>
             <DiceRoller key={6} option='earth' preview='1d20' />
           </div>
+          <div className='sample'>
+            <h2>Wood</h2>
+            <DiceRoller key={7} option='wood' preview='1d12' />
+          </div>
         </div>
       </div>
     )
