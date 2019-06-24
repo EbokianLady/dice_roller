@@ -5,7 +5,9 @@ import './custom_form.css';
 const DiceForm = function(setDropdown, count, value, setCount, setValue, palette) {
   return (
     <div className='customForm'>
-      <div onClick={() => setDropdown(true)}>
+      <div
+        className='diceMedBox'
+        onClick={() => setDropdown(true)}>
         <div className='diceIconMed' >
           {diceIcons(palette.dice, 'custom')}
         </div>

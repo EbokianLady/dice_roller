@@ -7,6 +7,8 @@ import explodesOff from '../svg_icons/explode_off';
 import './dice_roller.css';
 import defaultPalette from '../color_palettes/color_palettes';
 
+// TO-DO adjust preview to allow for custom default
+
 function DiceRoller({ option = 'classic', preview = '1d6' }) {
   let palette = defaultPalette[option];
   let [count, value] = preview.split('d').map(el => parseInt(el));

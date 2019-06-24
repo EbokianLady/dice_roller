@@ -4,21 +4,25 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  height: 130px;
-  justify-content:flex-start;
-  left: -15px;
-  padding: 4px;
+  height: 130%;
+  justify-content: space-evenly;
+  left: -15%;
   position: absolute;
-  top: -15px;
-  width: 130px;
+  padding: 4%;
+  top: -15%;
+  width: 130%;
   z-index: 3;
+}
+
+.diceButton {
+  height: 30%;
+  width: 30%;
 }
 
 .diceIconSmall {
   cursor: pointer;
-  height: 30px;
-  width: 30px;
-  margin: 4px;
+  height: 95%;
+  width: 95%;
 }
 
 .diceIconSmall:hover {

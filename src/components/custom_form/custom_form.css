@@ -2,25 +2,30 @@
   background-color: inherit;
   display: flex;
   flex-direction: column;
-  height: 130px;
-  justify-content: center;
-  left: -15px;
-  padding: 15px;
+  height: 130%;
+  justify-content: space-between;
+  left: -15%;
+  padding: 15%;
   position: absolute;
-  width: 130px;
+  width: 130%;
+}
+
+.diceMedBox {
+  height: 60%;
+  width: 60%;
 }
 
 .diceIconMed {
   cursor: pointer;
-  height: 60px;
-  margin: 4px;
-  width: 60px;
+  height: 100%;
+  width: 100%;
 }
 
 .inputFields {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  height: 30%;
   width: 100%;
 }
 
@@ -29,8 +34,8 @@ input {
   box-sizing: border-box;
   cursor: text;
   font-size: 18px;
-  height: 30px;
-  padding: 5px;
+  height: 100%;
+  padding: 5%;
   text-align: center;
-  width: 40px;
+  width: 40%;
 }

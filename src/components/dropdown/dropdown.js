@@ -16,6 +16,7 @@ const DiceDropdown = function (setDiceRoller, setCustomDiceRoller, { dice, dropd
       {DiceButton(setDiceRoller, 1, 12, '1d12', dice)}
       {DiceButton(setDiceRoller, 1, 20, '1d20', dice)}
       <button
+        className='diceButton'
         onClick={() => setCustomDiceRoller()}>
         <div className='diceIconSmall' >
           {diceIcons(dice, 'custom')}
@@ -28,6 +29,7 @@ const DiceDropdown = function (setDiceRoller, setCustomDiceRoller, { dice, dropd
 const DiceButton = function (setChoice, count, value, image, diceStyle) {
   return (
     <button
+      className='diceButton'
       onClick={() => setChoice(count, value, image)}>
       <div className='diceIconSmall' >
         {diceIcons(diceStyle, image)}
